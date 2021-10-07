@@ -1,19 +1,29 @@
 package com.example.accessingdatajpa;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "Customers")
 public class Customer {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
+    @Column(name = "CustomerName")
     private String firstName;
+    @Column(name ="ContactLastName")
     private String lastName;
+    @Column(name ="Address")
+    private String address;
 
+    @Column(name ="City")
+    private String city;
+
+    @Column(name ="PostalCode")
+    private String postalCode;
+
+    @Column(name ="Country")
+    private String country;
     protected Customer() {}
 
     public Customer(String firstName, String lastName) {
